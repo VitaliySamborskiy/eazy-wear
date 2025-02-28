@@ -1,0 +1,19 @@
+$breakpoints-max-width: (
+	xxl: 1920px,
+	xl: 1440px,
+	lg: 1140px,
+	md: 768px,
+	sm: 575px,
+	xs: 374px,
+);
+
+@mixin breakpoints-max-width($breakpoint-max-width) {
+	@if map-has-key($breakpoints-max-width, $breakpoint-max-width) {
+		$breakpoint-value: map-get($breakpoints-max-width, $breakpoint-max-width);
+		@media (max-width: $breakpoint-value) {
+			@content;
+		}
+	} @else {
+		@warn 'Invalid breakpoint: #{$breakpoint-max-width}.';
+	}
+}
