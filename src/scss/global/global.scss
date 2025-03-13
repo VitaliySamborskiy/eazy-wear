@@ -1,3 +1,55 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	background: $whitePage;
+
+	&::-webkit-scrollbar {
+		width: 5px;
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background: $grey-light;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $grey;
+	font-family: $mainFont;
+	font-size: $title;
+	font-weight: $regular;
+}
+
+p {
+	color: $grey;
+	font-family: $supportFonts;
+	font-weight: $regular;
+	font-size: $text;
+	line-height: 150%;
+}
+
+a {
+	font-size: $text;
+	color: $grey;
+	font-family: $supportFonts;
+	font-weight: $medium;
+}
+
 .wrapper {
 	min-height: 100%;
 	display: flex;
