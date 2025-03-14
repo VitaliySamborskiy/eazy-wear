@@ -1,11 +1,14 @@
+import { SvgSprite } from "../../components/components.tsx";
+
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
-	return(
+	return (
 		<>
-			<Outlet/>
+			<Outlet />
+			<SvgSprite />
 		</>
-	)
-}
+	);
+};
 
-export { Layout }
+export { Layout };
