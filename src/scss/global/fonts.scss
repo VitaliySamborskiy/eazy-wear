@@ -1,42 +1,27 @@
-//font-name
-
-$mainFont: "Bicubik", sans-serif;
-$supportFonts: "e-Ukraine Head", sans-serif;
-
-
-//font-weight
-
-$regular: 400;
-
-//font-size
-
-$title: 36px;
-$text: 18px;
-
 @font-face {
-  font-display: swap;
-  font-weight: $regular;
-  font-family: $mainFont;
-  src: url("/src/assets/fonts/Bicubik.woff") format("woff");
+	font-display: swap;
+	font-weight: $regular;
+	font-family: $mainFont;
+	src: url("/src/assets/fonts/Bicubik.woff") format("woff");
 }
 
 @font-face {
-  font-display: swap;
-  font-weight: $regular;
-  font-family: $mainFont;
-  src: url("/src/assets/fonts/Bicubik.woff2") format("woff2");
+	font-display: swap;
+	font-weight: $regular;
+	font-family: $mainFont;
+	src: url("/src/assets/fonts/Bicubik.woff2") format("woff2");
 }
 
 @font-face {
-  font-display: swap;
-  font-weight: $regular;
-  font-family: $supportFonts;
-  src: url("/src/assets/fonts/e-ukrainehead-regular_w.woff") format("woff");
+	font-display: swap;
+	font-weight: $regular;
+	font-family: $supportFonts;
+	src: url("/src/assets/fonts/e-ukrainehead-regular_w.woff") format("woff");
 }
 
 @font-face {
-  font-display: swap;
-  font-weight: $regular;
-  font-family: $supportFonts;
-  src: url("/src/assets/fonts/e-ukrainehead-regular_w.woff2") format("woff2");
+	font-display: swap;
+	font-weight: $regular;
+	font-family: $supportFonts;
+	src: url("/src/assets/fonts/e-ukrainehead-regular_w.woff2") format("woff2");
 }
