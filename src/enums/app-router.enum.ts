@@ -1,6 +1,6 @@
 const AppRouter = {
-	ANY: '*',
-	MAINPAGE: '/',
+	ANY: "*",
+	MAINPAGE: "/eaze-wear/",
 } as const;
 
 export { AppRouter };

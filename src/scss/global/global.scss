@@ -10,7 +10,7 @@ html {
 }
 
 body {
-	background: $whitePage;
+	background: $blue-light;
 
 	&::-webkit-scrollbar {
 		width: 5px;
@@ -35,19 +35,27 @@ h6 {
 	font-weight: $regular;
 }
 
-p {
+p,
+label {
 	color: $grey;
 	font-family: $supportFonts;
 	font-weight: $regular;
 	font-size: $text;
 	line-height: 150%;
+	letter-spacing: 0.02em;
+}
+
+button {
+	font-family: $supportFonts;
+	font-weight: $regular;
+	text-align: center;
 }
 
 a {
 	font-size: $text;
 	color: $grey;
 	font-family: $supportFonts;
-	font-weight: $medium;
+	font-weight: $regular;
 }
 
 .wrapper {
@@ -62,7 +70,7 @@ a {
 }
 
 [class*="__container"] {
-	max-width: 1780px;
+	max-width: 1440px;
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 20px;
