@@ -2,32 +2,29 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer>
-      <div>
-        <div>
-          {/* Логотип та слоган */}
-          <div>
-            <div>EAZYWEAR</div>
-            <div>ВАШ СТІЛЬ,ВАША СВОБОДА</div>
+    <footer className="footer">
+      <div className="container">
+        <div className="footer__content">
+          <div className="footer__logo-block">
+            <div className="footer__logo">EAZYWEAR</div>
+            <div className="footer__slogan">ВАШ СТІЛЬ,ВАША СВОБОДА</div>
           </div>
           
-          {/* Інформація */}
-          <div>
-            <h3>Інформація</h3>
-            <nav>
-              <a href="#">Контакти</a>
-              <a href="#">Про нас</a>
-              <a href="#">Оплата і доставка</a>
+          <div className="footer__info">
+            <h3 className="footer__heading">Інформація</h3>
+            <nav className="footer__nav">
+              <a href="#" className="footer__link">Контакти</a>
+              <a href="#" className="footer__link">Про нас</a>
+              <a href="#" className="footer__link">Оплата і доставка</a>
             </nav>
           </div>
           
-          {/* Соціальні мережі */}
-          <div>
-            <h3>Соціальні мережі</h3>
-            <div>
-              <a href="#">Telegram</a>
-              <a href="#">Facebook</a>
-              <a href="#">Instagram</a>
+          <div className="footer__social">
+            <h3 className="footer__heading">Соціальні мережі</h3>
+            <div className="footer__social-links">
+              <a href="#" className="footer__link">Telegram</a>
+              <a href="#" className="footer__link">Facebook</a>
+              <a href="#" className="footer__link">Instagram</a>
             </div>
           </div>
         </div>
@@ -36,4 +33,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export { Footer };
