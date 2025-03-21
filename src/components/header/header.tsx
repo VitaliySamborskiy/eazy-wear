@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IconElement } from "../components.tsx";
+import { BurgerMenu, IconElement } from "../components.tsx";
 
 import { Link } from "react-router-dom";
 import { AppRouter } from "../../enums/app-router.enum.ts";
@@ -11,6 +11,7 @@ import "./header.scss";
 const Header: React.FC = () => {
 	const [productCount, setProductCount] = useState<number>(0);
 	const [inputActive, setInputActive] = useState<boolean>(false);
+	const [activeBurger, setActiveBurger] = useState<boolean>(false);
 
 	const handleActiveInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setInputActive(!!event.target.value.trim());
@@ -77,11 +78,16 @@ const Header: React.FC = () => {
 						</button>
 					</div>
 					<button className="header__registration">Реестрація</button>
-					<button className="header__burger-button">
-						<span className="header__burger-items"></span>
-						<span className="header__burger-items"></span>
-						<span className="header__burger-items"></span>
+					<button
+						className={`header__burger-button ${activeBurger ? "header__burger-button_active" : ""}`}
+						onClick={() => setActiveBurger(!activeBurger)}>
+						{Array.from({ length: 3 }).map((_, index) => (
+							<span
+								key={index}
+								className="header__burger-items"></span>
+						))}
 					</button>
+					<BurgerMenu activeStatus={activeBurger} />
 				</div>
 				<nav className="header__navigate">
 					<ul className="header__link-items">
