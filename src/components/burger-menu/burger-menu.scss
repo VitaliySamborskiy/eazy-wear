@@ -1,0 +1,63 @@
+@import "/src/scss/global/vars";
+@import "/src/scss/global/mixin";
+
+.burger-menu {
+	&__background {
+		display: none;
+
+		@include breakpoints-max-width(md) {
+			display: block;
+			position: absolute;
+			top: -800%;
+			left: 0;
+			padding: 66px 24px;
+			width: 100%;
+			background: $white;
+			border-radius: 16px;
+			box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+			z-index: 2;
+			transition: top 1.3s ease-in-out;
+		}
+
+		&_active {
+			top: 0;
+		}
+	}
+
+	&__title {
+		color: $black;
+		font-size: 22px;
+	}
+
+	&__navigation {
+		margin-top: 32px;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__list-link {
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+	}
+
+	&__list-item {
+		display: flex;
+		flex-direction: row;
+		padding: 10px 4px;
+		width: 100%;
+		gap: 10px;
+		border-bottom: 0.5px solid #cbcbcb;
+		border-radius: 4px;
+	}
+
+	&__list-text {
+		color: $grey-light;
+		font-size: $mini-text;
+		font-weight: $extra-light;
+	}
+}

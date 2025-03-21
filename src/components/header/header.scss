@@ -1,9 +1,11 @@
 @import "/src/scss/global/vars";
+@import "/src/scss/global/mixin";
 
 .header {
 	&__content {
 		position: fixed;
 		width: 100%;
+		background: $white;
 	}
 
 	&__action-text {
@@ -12,18 +14,33 @@
 		color: $white;
 		text-align: center;
 		background: $black;
+
+		@include breakpoints-max-width(lg) {
+			font-size: 10px;
+		}
+
+		@include breakpoints-max-width(md) {
+			display: none;
+		}
 	}
 
 	&__main-content {
-		margin-top: 15px;
+		margin-top: 10px;
 		display: flex;
 		justify-content: space-between;
+		gap: 20px;
 
 		&-center {
 			display: flex;
 			width: 62%;
 			justify-content: space-between;
 			padding-right: 8px;
+			gap: 20px;
+
+			@include breakpoints-max-width(lg) {
+				padding-right: 0;
+				width: 60%;
+			}
 		}
 	}
 
@@ -36,12 +53,37 @@
 		line-height: 140%;
 		letter-spacing: 0.02em;
 		text-transform: uppercase;
+
+		@include breakpoints-max-width(lg) {
+			font-size: 22px;
+		}
+
+		@include breakpoints-max-width(md) {
+			margin-top: 0;
+		}
 	}
 
 	&__switch {
 		&-language {
 			display: flex;
-			gap: 6px;
+			gap: 8px;
+			position: relative;
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: 15px;
+				left: 51%;
+				display: flex;
+				background-color: $grey;
+				width: 2px;
+				height: 18px;
+
+				@include breakpoints-max-width(md) {
+					top: 8px;
+					left: 48%;
+				}
+			}
 		}
 
 		&-button {
@@ -49,41 +91,90 @@
 			font-weight: 200;
 			font-size: 20px;
 			line-height: 160%;
+
+			@include breakpoints-max-width(lg) {
+				font-size: 16px;
+			}
 		}
 	}
 
 	&__search {
 		&-form {
 			position: relative;
+
+			@include breakpoints-max-width(lg) {
+				width: 60%;
+			}
+
+			@include breakpoints-max-width(md) {
+				display: none;
+			}
 		}
 
 		&-button {
 			position: absolute;
 			top: 9%;
-			left: 12%;
+			left: 11%;
+
+			@include breakpoints-max-width(lg) {
+				left: 3%;
+			}
 		}
 
 		&-label {
 			position: absolute;
 			font-size: 17px;
 			top: 23%;
-			left: 25%;
+			left: 23%;
+			opacity: 1;
+			transition:
+				top 0.5s ease-in-out,
+				opacity 0.5s ease-in-out;
+
+			@include breakpoints-max-width(lg) {
+				left: 16%;
+			}
+
+			&_active {
+				top: 9%;
+				opacity: 0;
+			}
 		}
 
 		&-input {
-			margin-left: 10.5%;
-			margin-top: 3px;
-			padding: 0 10px;
+			margin: 3px 0 0 9%;
+			padding: 0 10px 0 64px;
 			width: 454px;
 			height: 40px;
 			border-radius: 4px;
 			border: 1px solid $black;
+
+			@include breakpoints-max-width(lg) {
+				width: 100%;
+				margin: 3px 0 0 0;
+			}
+		}
+	}
+
+	&__svg-basket {
+		transition: fill 0.5s ease-in-out;
+
+		&:hover {
+			fill: $black;
 		}
 	}
 
 	&__basket {
 		position: relative;
-		margin-left: 60px;
+		margin: 5px 0 0 60px;
+
+		@include breakpoints-max-width(lg) {
+			margin: 5px 0 0 0;
+		}
+
+		@include breakpoints-max-width(md) {
+			display: none;
+		}
 
 		&-count {
 			font-size: 12px;
@@ -91,23 +182,32 @@
 			font-weight: 500;
 			padding: 8px;
 			position: absolute;
-			top: -2px;
-			right: -9px;
+			top: -6px;
+			right: -10px;
 			background: $blue-light;
 			border-radius: 100%;
 		}
 	}
 
 	&__registration {
+		margin-top: 4px;
+		padding: 7px;
 		width: 218px;
 		color: $white;
 		background: $black;
-		padding: 12px;
 		border-radius: 16px;
 		border: 2px solid $black;
 		transition:
 			color 0.5s ease-in-out,
 			background 0.5s ease-in-out;
+
+		@include breakpoints-max-width(lg) {
+			width: 180px;
+		}
+
+		@include breakpoints-max-width(md) {
+			display: none;
+		}
 
 		&:hover {
 			background: transparent;
@@ -116,7 +216,11 @@
 	}
 
 	&__navigate {
-		margin-top: 35px;
+		margin-top: 45px;
+
+		@include breakpoints-max-width(lg) {
+			margin-top: 25px;
+		}
 
 		&:after {
 			position: absolute;
@@ -127,19 +231,85 @@
 			background: $grey-light;
 			width: 100%;
 			height: 1px;
+
+			@include breakpoints-max-width(lg) {
+				top: 90px;
+			}
 		}
 	}
 
 	&__link {
+		transition: color 0.5s ease-in-out;
+
+		@include breakpoints-max-width(lg) {
+			font-size: 12px;
+		}
+
+		&:hover {
+			color: $black;
+		}
+
 		&-items {
 			margin: 0 auto;
 			display: flex;
 			justify-content: space-between;
+
+			@include breakpoints-max-width(md) {
+				display: none;
+			}
 		}
 
 		&-item {
+			position: relative;
 			width: 100%;
 			text-align: center;
+
+			&:hover {
+				&:after {
+					transform: scaleX(1);
+					transform-origin: left;
+				}
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: 36px;
+				left: 8%;
+				display: flex;
+				width: 85%;
+				height: 2px;
+				background: $black;
+				transform: scaleX(0);
+				transform-origin: right;
+				transition: transform 0.5s ease-in-out;
+
+				@include breakpoints-max-width(lg) {
+					top: 26px;
+					height: 1px;
+					width: 90%;
+					left: 5%;
+				}
+			}
+		}
+	}
+
+	&__burger-items {
+		background: $grey;
+		width: 100%;
+		height: 2px;
+	}
+
+	&__burger-button {
+		display: none;
+
+		@include breakpoints-max-width(md) {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			height: 24px;
+			width: 24px;
+			z-index: 3;
 		}
 	}
 }
