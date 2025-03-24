@@ -36,7 +36,8 @@ h6 {
 }
 
 p,
-label {
+label,
+span {
 	color: $grey;
 	font-family: $supportFonts;
 	font-weight: $regular;
@@ -45,9 +46,13 @@ label {
 	letter-spacing: 0.02em;
 }
 
-button {
+button,
+input {
 	font-family: $supportFonts;
 	font-weight: $regular;
+}
+
+button {
 	text-align: center;
 }
 

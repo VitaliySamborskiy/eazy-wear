@@ -1,21 +1,27 @@
 import React, { useState } from "react";
-import { IconElement } from "../components.tsx";
+import { BurgerMenu, IconElement } from "../components.tsx";
 
 import { Link } from "react-router-dom";
 import { AppRouter } from "../../enums/app-router.enum.ts";
 
-import type { Icon } from "../icons/type/types.ts";
+import { type Icon } from "../icons/type/types.ts";
 
-import "./header.scss";
+import styles from "./header.module.scss";
 
 const Header: React.FC = () => {
 	const [productCount, setProductCount] = useState<number>(0);
+	const [inputActive, setInputActive] = useState<boolean>(false);
+	const [activeBurger, setActiveBurger] = useState<boolean>(false);
 
-	const counts = () => setProductCount(0);
+	const handleActiveInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setInputActive(!!event.target.value.trim());
+	};
+
+	// const counts = () => setProductCount(2);
 
 	const iconBasket: Icon = {
 		name: "basket",
-		style: "header__svg-basket",
+		style: styles.svgBasket,
 		color: "#383838",
 		height: 36,
 		width: 36,
@@ -23,97 +29,110 @@ const Header: React.FC = () => {
 
 	const iconSearch: Icon = {
 		name: "search",
-		style: "header__svg-search",
+		style: styles.svgSearch,
 		color: "transparent",
 		height: 36,
 		width: 36,
 	};
 
 	return (
-		<>
-			<header className="header__content">
-				<p className="header__action-text">
-					На промокод знижка -10% (тільки для зареєстрованих клієнтів). Кількість використань одним
-					клієнтом необмежена.
-				</p>
-				<div className="header__container">
-					<div className="header__main-content">
-						<Link
-							className="header__logo"
-							to={AppRouter.MAINPAGE}>
-							EazyWear
-						</Link>
-						<div className="header__main-content-center">
-							<div className="header__switch-language">
-								<button className="header__switch-button">UA</button>
-								<button className="header__switch-button">EN</button>
-							</div>
-							<form className="header__search-form">
-								<button className="header__search-button">
-									<IconElement {...iconSearch} />
-								</button>
-								<label className="header__search-label">Пошук</label>
-								<input
-									className="header__search-input"
-									name=""
-								/>
-							</form>
-							<button className="header__basket">
-								<IconElement {...iconBasket} />
-								<span className="header__basket-count">{productCount}</span>
-							</button>
+		<header className={styles.content}>
+			<p className={styles.actionText}>
+				На промокод знижка -10% (тільки для зареєстрованих клієнтів). Кількість використань одним
+				клієнтом необмежена.
+			</p>
+			<div className="header__container">
+				<div className={styles.mainContent}>
+					<Link
+						className={styles.logo}
+						to={AppRouter.MAINPAGE}>
+						EazyWear
+					</Link>
+					<div className={styles.mainContentCenter}>
+						<div className={styles.switchLanguage}>
+							<button className={styles.switchButton}>UA</button>
+							<button className={styles.switchButton}>EN</button>
 						</div>
-						<button className="header__registration">Реестрація</button>
+						<form className={styles.searchForm}>
+							<button className={styles.searchButton}>
+								<IconElement {...iconSearch} />
+							</button>
+							<label
+								className={`${styles.searchLabel} ${inputActive ? styles.searchLabelActive : ""}`}
+								htmlFor="searchInput">
+								Пошук
+							</label>
+							<input
+								className={styles.searchInput}
+								name="search"
+								type="search"
+								id="searchInput"
+								onChange={e => handleActiveInput(e)}
+								onFocus={() => setInputActive(true)}
+								onBlur={e => handleActiveInput(e)}
+							/>
+						</form>
+						<button className={styles.basket}>
+							<IconElement {...iconBasket} />
+							<span className={styles.basketCount}>{productCount}</span>
+						</button>
 					</div>
-					<nav className="header__navigate">
-						<ul className="header__link-items">
-							<li className="header__link-item">
-								<Link
-									className="header__link"
-									to={AppRouter.MAINPAGE}>
-									Каталог
-								</Link>
-							</li>
-							<li className="header__link-item">
-								<Link
-									className="header__link"
-									to={AppRouter.MAINPAGE}>
-									Про нас
-								</Link>
-							</li>
-							<li className="header__link-item">
-								<Link
-									className="header__link"
-									to={AppRouter.MAINPAGE}>
-									Популярні товари
-								</Link>
-							</li>
-							<li className="header__link-item">
-								<Link
-									className="header__link"
-									to={AppRouter.MAINPAGE}>
-									Доставка і оплата
-								</Link>
-							</li>
-							<li className="header__link-item">
-								<Link
-									className="header__link"
-									to={AppRouter.MAINPAGE}>
-									Дропшипінг
-								</Link>
-							</li>
-							<li className="header__link-item">
-								<Link
-									className="header__link"
-									to={AppRouter.MAINPAGE}>
-									Інфо
-								</Link>
-							</li>
-						</ul>
-					</nav>
+					<button className={styles.registration}>Реестрація</button>
+					<button
+						className={`${styles.burgerButton} ${activeBurger ? styles.burgerButtonActive : ""}`}
+						onClick={() => setActiveBurger(true)}>
+						{Array.from({ length: 3 }).map((_, index) => (
+							<span
+								key={index}
+								className={styles.burgerItem}></span>
+						))}
+					</button>
+					<BurgerMenu
+						activeStatus={activeBurger}
+						setStatus={setActiveBurger}
+					/>
 				</div>
-			</header>
-		</>
+				<nav className={styles.navigate}>
+					<ul className={styles.linkItems}>
+						<li className={styles.linkItem}>
+							<Link
+								className={styles.link}
+								to={AppRouter.MAINPAGE}>
+								Каталог
+							</Link>
+						</li>
+						<li className={styles.linkItem}>
+							<Link
+								className={styles.link}
+								to={AppRouter.MAINPAGE}>
+								Про нас
+							</Link>
+						</li>
+						<li className={styles.linkItem}>
+							<Link
+								className={styles.link}
+								to={AppRouter.MAINPAGE}>
+								Популярні товари
+							</Link>
+						</li>
+						<li className={styles.linkItem}>
+							<Link
+								className={styles.link}
+								to={AppRouter.MAINPAGE}>
+								Доставка і оплата
+							</Link>
+						</li>
+						<li className={styles.linkItem}>
+							<Link
+								className={styles.link}
+								to={AppRouter.MAINPAGE}>
+								Дропшипінг
+							</Link>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 	);
 };
 
