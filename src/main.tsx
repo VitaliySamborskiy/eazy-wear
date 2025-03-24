@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Layout, MainPage } from "./pages/pages.tsx";
 import { AppRouter } from "./enums/app-router.enum.ts";
+import "./i18n/i18n.ts";
+
 import "./scss/varible.scss";
 
 const router = createBrowserRouter([

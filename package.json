@@ -12,11 +12,15 @@
   },
   "dependencies": {
     "gh-pages": "^6.3.0",
+    "i18next": "^24.2.3",
+    "i18next-browser-languagedetector": "^8.0.4",
+    "i18next-http-backend": "^3.0.2",
     "just-validate": "^4.3.0",
     "notiflix": "^3.2.8",
     "prettier": "^3.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.1",
     "react-router-dom": "^7.2.0",
     "sass-embedded": "^1.85.1"
   },
