@@ -1,5 +1,5 @@
 export type Icon = {
-	style: string;
+	style?: string;
 	name: string;
 	width?: number;
 	height?: number;

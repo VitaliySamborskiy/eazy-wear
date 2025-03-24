@@ -159,6 +159,21 @@ const SvgSprite: React.FC = () => {
 					stroke-width="2"
 				/>
 			</symbol>
+
+			<symbol
+				id="cross"
+				viewBox="0 0 24 25">
+				<path
+					d="M17.6574 18.1575L6.34367 6.84383"
+					stroke="#383838"
+					stroke-linecap="round"
+				/>
+				<path
+					d="M17.6563 6.84383L6.34262 18.1575"
+					stroke="#383838"
+					stroke-linecap="round"
+				/>
+			</symbol>
 		</svg>
 	);
 };

@@ -4,9 +4,9 @@ import { BurgerMenu, IconElement } from "../components.tsx";
 import { Link } from "react-router-dom";
 import { AppRouter } from "../../enums/app-router.enum.ts";
 
-import type { Icon } from "../icons/type/types.ts";
+import { type Icon } from "../icons/type/types.ts";
 
-import "./header.scss";
+import styles from "./header.module.scss";
 
 const Header: React.FC = () => {
 	const [productCount, setProductCount] = useState<number>(0);
@@ -17,11 +17,11 @@ const Header: React.FC = () => {
 		setInputActive(!!event.target.value.trim());
 	};
 
-	const counts = () => setProductCount(2);
+	// const counts = () => setProductCount(2);
 
 	const iconBasket: Icon = {
 		name: "basket",
-		style: "header__svg-basket",
+		style: styles.svgBasket,
 		color: "#383838",
 		height: 36,
 		width: 36,
@@ -29,41 +29,41 @@ const Header: React.FC = () => {
 
 	const iconSearch: Icon = {
 		name: "search",
-		style: "header__svg-search",
+		style: styles.svgSearch,
 		color: "transparent",
 		height: 36,
 		width: 36,
 	};
 
 	return (
-		<header className="header__content">
-			<p className="header__action-text">
+		<header className={styles.content}>
+			<p className={styles.actionText}>
 				На промокод знижка -10% (тільки для зареєстрованих клієнтів). Кількість використань одним
 				клієнтом необмежена.
 			</p>
 			<div className="header__container">
-				<div className="header__main-content">
+				<div className={styles.mainContent}>
 					<Link
-						className="header__logo"
+						className={styles.logo}
 						to={AppRouter.MAINPAGE}>
 						EazyWear
 					</Link>
-					<div className="header__main-content-center">
-						<div className="header__switch-language">
-							<button className="header__switch-button">UA</button>
-							<button className="header__switch-button">EN</button>
+					<div className={styles.mainContentCenter}>
+						<div className={styles.switchLanguage}>
+							<button className={styles.switchButton}>UA</button>
+							<button className={styles.switchButton}>EN</button>
 						</div>
-						<form className="header__search-form">
-							<button className="header__search-button">
+						<form className={styles.searchForm}>
+							<button className={styles.searchButton}>
 								<IconElement {...iconSearch} />
 							</button>
 							<label
-								className={`header__search-label ${inputActive ? "header__search-label_active" : ""}`}
+								className={`${styles.searchLabel} ${inputActive ? styles.searchLabelActive : ""}`}
 								htmlFor="searchInput">
 								Пошук
 							</label>
 							<input
-								className="header__search-input"
+								className={styles.searchInput}
 								name="search"
 								type="search"
 								id="searchInput"
@@ -72,56 +72,59 @@ const Header: React.FC = () => {
 								onBlur={e => handleActiveInput(e)}
 							/>
 						</form>
-						<button className="header__basket">
+						<button className={styles.basket}>
 							<IconElement {...iconBasket} />
-							<span className="header__basket-count">{productCount}</span>
+							<span className={styles.basketCount}>{productCount}</span>
 						</button>
 					</div>
-					<button className="header__registration">Реестрація</button>
+					<button className={styles.registration}>Реестрація</button>
 					<button
-						className={`header__burger-button ${activeBurger ? "header__burger-button_active" : ""}`}
-						onClick={() => setActiveBurger(!activeBurger)}>
+						className={`${styles.burgerButton} ${activeBurger ? styles.burgerButtonActive : ""}`}
+						onClick={() => setActiveBurger(true)}>
 						{Array.from({ length: 3 }).map((_, index) => (
 							<span
 								key={index}
-								className="header__burger-items"></span>
+								className={styles.burgerItem}></span>
 						))}
 					</button>
-					<BurgerMenu activeStatus={activeBurger} />
+					<BurgerMenu
+						activeStatus={activeBurger}
+						setStatus={setActiveBurger}
+					/>
 				</div>
-				<nav className="header__navigate">
-					<ul className="header__link-items">
-						<li className="header__link-item">
+				<nav className={styles.navigate}>
+					<ul className={styles.linkItems}>
+						<li className={styles.linkItem}>
 							<Link
-								className="header__link"
+								className={styles.link}
 								to={AppRouter.MAINPAGE}>
 								Каталог
 							</Link>
 						</li>
-						<li className="header__link-item">
+						<li className={styles.linkItem}>
 							<Link
-								className="header__link"
+								className={styles.link}
 								to={AppRouter.MAINPAGE}>
 								Про нас
 							</Link>
 						</li>
-						<li className="header__link-item">
+						<li className={styles.linkItem}>
 							<Link
-								className="header__link"
+								className={styles.link}
 								to={AppRouter.MAINPAGE}>
 								Популярні товари
 							</Link>
 						</li>
-						<li className="header__link-item">
+						<li className={styles.linkItem}>
 							<Link
-								className="header__link"
+								className={styles.link}
 								to={AppRouter.MAINPAGE}>
 								Доставка і оплата
 							</Link>
 						</li>
-						<li className="header__link-item">
+						<li className={styles.linkItem}>
 							<Link
-								className="header__link"
+								className={styles.link}
 								to={AppRouter.MAINPAGE}>
 								Дропшипінг
 							</Link>
