@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import { BurgerMenu, IconElement } from "../components.tsx";
 
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { AppRouter } from "../../enums/app-router.enum.ts";
 
 import { type Icon } from "../icons/type/types.ts";
 
 import styles from "./header.module.scss";
+import { LOCALS } from "../../i18n/constants/local.ts";
 
 const Header: React.FC = () => {
 	const [productCount, setProductCount] = useState<number>(0);
 	const [inputActive, setInputActive] = useState<boolean>(false);
 	const [activeBurger, setActiveBurger] = useState<boolean>(false);
+	const { t, i18n } = useTranslation();
 
 	const handleActiveInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setInputActive(!!event.target.value.trim());
@@ -37,10 +40,7 @@ const Header: React.FC = () => {
 
 	return (
 		<header className={styles.content}>
-			<p className={styles.actionText}>
-				На промокод знижка -10% (тільки для зареєстрованих клієнтів). Кількість використань одним
-				клієнтом необмежена.
-			</p>
+			<p className={styles.actionText}>{t("header.promo")}</p>
 			<div className="header__container">
 				<div className={styles.mainContent}>
 					<Link
@@ -50,8 +50,16 @@ const Header: React.FC = () => {
 					</Link>
 					<div className={styles.mainContentCenter}>
 						<div className={styles.switchLanguage}>
-							<button className={styles.switchButton}>UA</button>
-							<button className={styles.switchButton}>EN</button>
+							<button
+								className={styles.switchButton}
+								onClick={() => i18n.changeLanguage(LOCALS.UK)}>
+								UA
+							</button>
+							<button
+								className={styles.switchButton}
+								onClick={() => i18n.changeLanguage(LOCALS.EN)}>
+								EN
+							</button>
 						</div>
 						<form className={styles.searchForm}>
 							<button className={styles.searchButton}>
@@ -60,7 +68,7 @@ const Header: React.FC = () => {
 							<label
 								className={`${styles.searchLabel} ${inputActive ? styles.searchLabelActive : ""}`}
 								htmlFor="searchInput">
-								Пошук
+								{t("header.search")}
 							</label>
 							<input
 								className={styles.searchInput}
@@ -77,7 +85,7 @@ const Header: React.FC = () => {
 							<span className={styles.basketCount}>{productCount}</span>
 						</button>
 					</div>
-					<button className={styles.registration}>Реестрація</button>
+					<button className={styles.registration}>{t("header.registration")}</button>
 					<button
 						className={`${styles.burgerButton} ${activeBurger ? styles.burgerButtonActive : ""}`}
 						onClick={() => setActiveBurger(true)}>
@@ -98,35 +106,35 @@ const Header: React.FC = () => {
 							<Link
 								className={styles.link}
 								to={AppRouter.MAINPAGE}>
-								Каталог
+								{t("header.catalog")}
 							</Link>
 						</li>
 						<li className={styles.linkItem}>
 							<Link
 								className={styles.link}
 								to={AppRouter.MAINPAGE}>
-								Про нас
+								{t("header.specialOffers")}
 							</Link>
 						</li>
 						<li className={styles.linkItem}>
 							<Link
 								className={styles.link}
 								to={AppRouter.MAINPAGE}>
-								Популярні товари
+								{t("header.popularProducts")}
 							</Link>
 						</li>
 						<li className={styles.linkItem}>
 							<Link
 								className={styles.link}
 								to={AppRouter.MAINPAGE}>
-								Доставка і оплата
+								{t("header.sales")}
 							</Link>
 						</li>
 						<li className={styles.linkItem}>
 							<Link
 								className={styles.link}
 								to={AppRouter.MAINPAGE}>
-								Дропшипінг
+								{t("header.dropship")}
 							</Link>
 						</li>
 					</ul>
