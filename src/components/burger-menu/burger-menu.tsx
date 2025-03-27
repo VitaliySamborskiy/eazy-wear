@@ -3,6 +3,7 @@ import React from "react";
 import { IconElement } from "../components.tsx";
 
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { AppRouter } from "../../enums/app-router.enum.ts";
 
 import { type Icon } from "../icons/type/types.ts";
@@ -11,6 +12,8 @@ import { type Burger } from "./types/types.ts";
 import styles from "./burger-menu.module.scss";
 
 const BurgerMenu: React.FC<Burger> = ({ activeStatus, setStatus }) => {
+	const { t } = useTranslation();
+
 	const baseIconParameters: Record<string, string | number> = {
 		color: "#6A6A6A",
 		height: 16,
@@ -54,7 +57,7 @@ const BurgerMenu: React.FC<Burger> = ({ activeStatus, setStatus }) => {
 	return (
 		<div className={`${styles.background} ${activeStatus ? styles.active : ""}`}>
 			<div className={styles.header}>
-				<h2 className={styles.title}>Меню</h2>
+				<h2 className={styles.title}>{t("burger.title")}</h2>
 				<button
 					className={styles.close}
 					onClick={() => setStatus(false)}>
@@ -65,18 +68,14 @@ const BurgerMenu: React.FC<Burger> = ({ activeStatus, setStatus }) => {
 				<ul className={styles.list}>
 					<li className={styles.listItem}>
 						<IconElement {...iconMenu.registration} />
-						<span className={styles.listText}>Реєстрація</span>
-					</li>
-					<li className={styles.listItem}>
-						<IconElement {...iconMenu.productSearch} />
-						<span className={styles.listText}>Пошук товару</span>
+						<span className={styles.listText}>{t("burger.registration")}</span>
 					</li>
 					<li className={styles.listItem}>
 						<Link
 							to={AppRouter.MAINPAGE}
 							className={styles.listLink}>
 							<IconElement {...iconMenu.cart} />
-							<span className={styles.listText}>Корзина</span>
+							<span className={styles.listText}>{t("burger.basket")}</span>
 						</Link>
 					</li>
 					<li className={styles.listItem}>
@@ -84,7 +83,7 @@ const BurgerMenu: React.FC<Burger> = ({ activeStatus, setStatus }) => {
 							to={AppRouter.MAINPAGE}
 							className={styles.listLink}>
 							<IconElement {...iconMenu.popularProducts} />
-							<span className={styles.listText}>Популярні товари</span>
+							<span className={styles.listText}>{t("burger.popularProducts")}</span>
 						</Link>
 					</li>
 					<li className={styles.listItem}>
@@ -92,7 +91,7 @@ const BurgerMenu: React.FC<Burger> = ({ activeStatus, setStatus }) => {
 							to={AppRouter.MAINPAGE}
 							className={styles.listLink}>
 							<IconElement {...iconMenu.dropshipping} />
-							<span className={styles.listText}>Дропшипінг</span>
+							<span className={styles.listText}>{t("burger.dropshipping")}</span>
 						</Link>
 					</li>
 					<li className={styles.listItem}>
@@ -100,7 +99,7 @@ const BurgerMenu: React.FC<Burger> = ({ activeStatus, setStatus }) => {
 							to={AppRouter.MAINPAGE}
 							className={styles.listLink}>
 							<IconElement {...iconMenu.discounts} />
-							<span className={styles.listText}>Знижки та Акції</span>
+							<span className={styles.listText}>{t("burger.sales")}</span>
 						</Link>
 					</li>
 				</ul>

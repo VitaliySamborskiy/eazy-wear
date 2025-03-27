@@ -1,12 +1,16 @@
 {
   "header.promo": "На промокод знижка -10% (тільки для зареєстрованих клієнтів). Кількість використань одним клієнтом необмежена.",
   "header.search": "Пошук",
-  "header.cart": "Кошик",
   "header.registration": "Реєстрація",
   "header.catalog": "Каталог",
   "header.specialOffers": "Про нас",
   "header.popularProducts": "Популярні товари",
   "header.sales": "Доставка і оплата",
   "header.dropship": "Дропшип",
-  "header.info": "Інфо"
+  "burger.title": "МЕНЮ",
+  "burger.registration": "Реєстрація",
+  "burger.basket": "Кошик",
+  "burger.popularProducts": "Популярні товари",
+  "burger.dropshipping": "Дропшипінг",
+  "burger.sales": "Знижки та Акції"
 }
