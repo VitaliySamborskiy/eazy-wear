@@ -1,0 +1,36 @@
+@import "/src/scss/global/vars";
+@import "/src/scss/global/mixin";
+
+.content {
+	margin-top: 208px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title {
+	line-height: 130%;
+}
+
+.navigate {
+	display: flex;
+	gap: 6px;
+}
+
+.swiper {
+	margin-top: 20px;
+}
+
+.arrowRight,
+.arrowLeft {
+	stroke: $greyInactive;
+	transition: stroke 0.5s ease-in-out;
+
+	&:hover {
+		stroke: $grey-light;
+	}
+}
+
+.arrowLeft {
+	transform: rotate(180deg);
+}

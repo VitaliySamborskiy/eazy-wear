@@ -286,6 +286,16 @@ const SvgSprite: React.FC = () => {
 					fill="#F5F5F5"
 				/>
 			</symbol>
+
+			<symbol
+				id="arrow"
+				viewBox="0 0 24 25">
+				<path
+					d="M10 18.5L16 12.5L10 6.5"
+					stroke-width="2"
+					stroke-linecap="round"
+				/>
+			</symbol>
 		</svg>
 	);
 };

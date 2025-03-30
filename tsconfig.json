@@ -30,6 +30,11 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "types": ["vite/client", "node"],
+
+    "compilerOptions": {
+      "moduleResolution": "node",
+      "types": ["swiper"]
+    }
   },
   "include": ["src/**/*", "vite.config.ts", "shims-vue.d.ts"],
   "exclude": ["node_modules", "dist"]
