@@ -36,38 +36,43 @@ const SwiperSection: React.FC<SwiperProps> = components => {
 	return (
 		<section className="swiper__container">
 			<div className={styles.content}>
-				<h2 className={styles.title}>{t(components.title)}</h2>
-				<div className={styles.navigate}>
-					<button ref={refPrev}>
-						<IconElement {...IconArrowLeft} />
-					</button>
-					<button ref={refNext}>
-						<IconElement {...IconArrowRight} />
-					</button>
+				<div className={styles.textContent}>
+					<h2 className={styles.title}>{t(components.title)}</h2>
+					<div className={styles.navigate}>
+						<button ref={refPrev}>
+							<IconElement {...IconArrowLeft} />
+						</button>
+						<button ref={refNext}>
+							<IconElement {...IconArrowRight} />
+						</button>
+					</div>
 				</div>
+				<Swiper
+					className={styles.swiper}
+					modules={[Navigation]}
+					breakpoints={components.swiperBreakpoints}
+					slidesPerView={components.slidesPerView}
+					spaceBetween={components.spaceBetween}
+					loop={components.loop}
+					onSwiper={swiper => {
+						setTimeout(() => {
+							if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
+								swiper.params.navigation.prevEl = refPrev.current;
+								swiper.params.navigation.nextEl = refNext.current;
+								swiper.navigation.init();
+								swiper.navigation.update();
+							}
+						}, 0);
+					}}>
+					{components.slideData.map((item, index) => (
+						<SwiperSlide
+							key={index}
+							className={styles.swiperSlide}>
+							<components.slideComponents {...item} />
+						</SwiperSlide>
+					))}
+				</Swiper>
 			</div>
-			<Swiper
-				className={styles.swiper}
-				modules={[Navigation]}
-				slidesPerView={3}
-				spaceBetween={50}
-				loop={true}
-				onSwiper={swiper => {
-					setTimeout(() => {
-						if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
-							swiper.params.navigation.prevEl = refPrev.current;
-							swiper.params.navigation.nextEl = refNext.current;
-							swiper.navigation.init();
-							swiper.navigation.update();
-						}
-					}, 0);
-				}}>
-				{components.slideData.map((item, index) => (
-					<SwiperSlide key={index}>
-						<components.slideComponents {...item} />
-					</SwiperSlide>
-				))}
-			</Swiper>
 		</section>
 	);
 };

@@ -3,6 +3,23 @@
 
 .content {
 	margin-top: 208px;
+
+	@include breakpoints-max-width(xl) {
+		width: 101.5%;
+		padding-right: 2%;
+		overflow: hidden;
+	}
+
+	@include breakpoints-max-width(lg) {
+		width: 102.5%;
+	}
+
+	@include breakpoints-max-width(md) {
+		width: 103.3%;
+	}
+}
+
+.textContent {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -10,6 +27,10 @@
 
 .title {
 	line-height: 130%;
+
+	@include breakpoints-max-width(lg) {
+		font-size: 20px;
+	}
 }
 
 .navigate {
@@ -18,7 +39,25 @@
 }
 
 .swiper {
-	margin-top: 20px;
+	padding: 2px;
+	width: 102%;
+	margin-top: 47px;
+
+	@include breakpoints-max-width(xl) {
+		width: 1440px;
+	}
+
+	@include breakpoints-max-width(lg) {
+		width: 1140px;
+		margin-top: 24px;
+	}
+
+	@include breakpoints-max-width(md) {
+		width: 738px;
+	}
+}
+
+.swiperSlide {
 }
 
 .arrowRight,
@@ -28,6 +67,12 @@
 
 	&:hover {
 		stroke: $grey-light;
+	}
+
+	@include breakpoints-max-width(md) {
+		&:hover {
+			stroke: none;
+		}
 	}
 }
 
