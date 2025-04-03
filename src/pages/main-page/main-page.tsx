@@ -4,7 +4,11 @@ import { type SwiperProps } from "../../components/swiper/types/types.ts";
 const MainPage = () => {
 	const components: SwiperProps = {
 		swiperBreakpoints: {
-			575: {
+			320: {
+				slidesPerView: 3.3,
+				spaceBetween: 18,
+			},
+			576: {
 				slidesPerView: 2.7,
 			},
 			768: {

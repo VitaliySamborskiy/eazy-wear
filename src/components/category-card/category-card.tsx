@@ -12,10 +12,8 @@ const CategoryCard: React.FC<Category> = memo(cardInfo => {
 	const { t } = useTranslation();
 
 	return (
-		<Link
-			to={AppRouter.MAINPAGE}
-			className={styles.card}>
-			<picture className={styles.imgBlock}>
+		<Link to={AppRouter.MAINPAGE}>
+			<picture>
 				<img
 					className={styles.img}
 					src={cardInfo.src}

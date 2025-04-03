@@ -65,9 +65,7 @@ const SwiperSection: React.FC<SwiperProps> = components => {
 						}, 0);
 					}}>
 					{components.slideData.map((item, index) => (
-						<SwiperSlide
-							key={index}
-							className={styles.swiperSlide}>
+						<SwiperSlide key={index}>
 							<components.slideComponents {...item} />
 						</SwiperSlide>
 					))}

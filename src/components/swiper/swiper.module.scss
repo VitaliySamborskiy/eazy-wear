@@ -17,6 +17,13 @@
 	@include breakpoints-max-width(md) {
 		width: 103.3%;
 	}
+
+	@include breakpoints-max-width(sm) {
+		position: relative;
+		left: -6%;
+		width: 111.5%;
+		padding-right: 5%;
+	}
 }
 
 .textContent {
@@ -29,6 +36,7 @@
 	line-height: 130%;
 
 	@include breakpoints-max-width(lg) {
+		padding-left: 6%;
 		font-size: 20px;
 	}
 }
@@ -36,6 +44,10 @@
 .navigate {
 	display: flex;
 	gap: 6px;
+
+	@include breakpoints-max-width(md) {
+		gap: 7px;
+	}
 }
 
 .swiper {
@@ -55,9 +67,11 @@
 	@include breakpoints-max-width(md) {
 		width: 738px;
 	}
-}
 
-.swiperSlide {
+	@include breakpoints-max-width(sm) {
+		width: 570px;
+		padding-left: 6%;
+	}
 }
 
 .arrowRight,
