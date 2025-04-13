@@ -1,0 +1,37 @@
+@import "/src/scss/global/vars";
+@import "/src/scss/global/mixin";
+
+.img {
+	width: 100%;
+	height: 464px;
+	box-shadow: 0 4px 16px 0 $blackShadow;
+
+	@include breakpoints-max-width(lg) {
+		height: 380px;
+	}
+
+	@include breakpoints-max-width(md) {
+		height: 280px;
+	}
+
+	@include breakpoints-max-width(sm) {
+		height: 200px;
+		overflow: hidden;
+		object-fit: cover;
+	}
+}
+
+.title {
+	margin-top: 35px;
+	font-size: 16px;
+	font-family: $supportFonts;
+
+	@include breakpoints-max-width(lg) {
+		margin-top: 5px;
+	}
+
+	@include breakpoints-max-width(md) {
+		line-height: 150%;
+		font-weight: 200;
+	}
+}

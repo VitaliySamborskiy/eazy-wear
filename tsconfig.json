@@ -12,6 +12,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
 
+
     /* Bundler mode */
     "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
@@ -29,7 +30,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "types": ["vite/client", "node"],
+    "types": ["vite/client", "node", "swiper"],
   },
   "include": ["src/**/*", "vite.config.ts", "shims-vue.d.ts"],
   "exclude": ["node_modules", "dist"]
