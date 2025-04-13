@@ -1,0 +1,59 @@
+@import "/src/scss/global/vars";
+@import "/src/scss/global/mixin";
+
+
+.topline {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+
+	h3 {
+		font-size: 24px;
+		font-weight: 600;
+		color: $black;
+	}
+
+	button {
+		background-color: $black;
+		color: $white;
+		border: none;
+		padding: 8px 12px;
+		font-size: 14px;
+		cursor: pointer;
+		margin-left: 8px;
+		border-radius: 6px;
+		transition: background 0.2s ease;
+
+		&:hover {
+			background-color: darken($black, 10%);
+		}
+	}
+}
+
+.list {
+	display: flex;
+	gap: 20px;
+	overflow: hidden;
+
+	@include breakpoints-max-width(md) {
+		gap: 16px;
+	}
+
+	@include breakpoints-max-width(sm) {
+		gap: 12px;
+	}
+
+	li {
+		flex: 0 0 calc(100% / 3 - 13.34px);
+		list-style: none;
+
+		@include breakpoints-max-width(md) {
+			flex: 0 0 calc(100% / 2 - 10px);
+		}
+
+		@include breakpoints-max-width(sm) {
+			flex: 0 0 100%;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+@import "../../scss/global/vars.scss";
+@import "../../scss/global/mixin.scss";
+
+.page { 
+    padding-top: 169px;
+    @include breakpoints-max-width(lg) {
+        padding-top: 149px;
+    }
+    
+    @include breakpoints-max-width(md) {
+        padding-top: 80px;
+    }
+}
+
