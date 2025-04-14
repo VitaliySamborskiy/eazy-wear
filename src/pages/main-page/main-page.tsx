@@ -1,4 +1,4 @@
-import { CategoryCard, SwiperSection } from "../../components/components.tsx";
+import { AboutUs, CategoryCard, SwiperSection } from "../../components/components.tsx";
 import { type SwiperProps } from "../../components/swiper/types/types.ts";
 
 const MainPage = () => {
@@ -59,6 +59,7 @@ const MainPage = () => {
 
 	return (
 		<>
+			<AboutUs />
 			<SwiperSection {...components} />
 		</>
 	);
