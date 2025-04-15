@@ -1,4 +1,4 @@
-import { Header, SvgSprite } from "../../components/components.tsx";
+import { Footer, Header, SvgSprite } from "../../components/components.tsx";
 
 import { Outlet } from "react-router-dom";
 
@@ -7,6 +7,7 @@ const Layout = () => {
 		<>
 			<Header />
 			<Outlet />
+			<Footer />
 			<SvgSprite />
 		</>
 	);

@@ -13,5 +13,13 @@
   "burger.popularProducts": "Popular products",
   "burger.dropshipping": "Dropshipping",
   "burger.sales": "Discounts & Sales",
-  "slider.title": "Product categoryу"
+  "slider.title": "Product categoryу",
+  "footer.slogan": "Your style, your freedom",
+  "footer.info": "Info",
+  "footer.contacts": "Contacts",
+  "footer.about": "About us",
+  "footer.delivery": "Payment and delivery",
+  "footer.social": "Social networks",
+  "footer.aria.social": "social networks",
+  "footer.aria.menu": "menu navigation"
 }

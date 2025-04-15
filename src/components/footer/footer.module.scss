@@ -1,0 +1,83 @@
+@import "/src/scss/global/vars";
+@import "/src/scss/global/mixin";
+
+.footer {
+	background-color: $black;
+	color: $white;
+	padding: 60px 0;
+}
+
+.content {
+	display: flex;
+	//flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 30px;
+}
+
+.logoBlock {
+	flex: 1;
+	min-width: 200px;
+
+	p {
+		font-size: 14px;
+		opacity: 0.8;
+	}
+}
+
+.logo {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.info,
+.social {
+	flex: 1;
+	min-width: 200px;
+
+	nav {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+}
+
+.subTitle {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	position: relative;
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 40px;
+		height: 2px;
+		//background-color: $primary;
+	}
+}
+
+.socialLinks {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.link {
+	color: $white;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+//@media (max-width: 768px) {
+//	.footer {
+//		padding: 40px 0;
+//
+//		&__content {
+//			flex-direction: column;
+//			gap: 30px;
+//		}
+//	}
+//}
