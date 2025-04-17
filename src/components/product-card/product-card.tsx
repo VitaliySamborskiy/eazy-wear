@@ -18,6 +18,13 @@ const iconBasket: Icon = {
 	height: 24,
 	width: 24,
 };
+const iconHeart: Icon = {
+	name: "heart",
+	style: styles.svgHeart,
+	color: "#383838",
+	height: 24,
+	width: 24,
+};
 
 const ProductCard: React.FC<ProductCardProps> = ({
 	id,
@@ -30,6 +37,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
 	console.log("Цена товара:", { originalPrice, price });
 	return (
 		<li className={styles.card}>
+			<div className={styles.toplinecard}>
+				<span className={styles.new}>New</span>
+				<button className={styles.heard}><IconElement {...iconHeart} /></button>
+				
+			</div>
 			<img
 				src={imageUrl}
 				alt={title}

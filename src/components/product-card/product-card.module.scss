@@ -51,7 +51,16 @@
   padding-left: 12px;
   padding-right: 12px;
 }
-
+.toplinecard {
+	display: flex;
+	justify-content: space-between;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.new{
+	background-color: $yellow;
+	padding:5px;
+}
 .price {
 	font-size: 16px;
 	color: $black;
@@ -62,8 +71,8 @@
 	}
 
 	.originalPrice {
+		background-color: $yellow;
 		font-size: 14px;
-		color: red;
 		text-decoration: line-through;
 		padding-left: 20px;
 		margin-right: 8px;
