@@ -11,10 +11,6 @@ import styles from "./footer.module.scss";
 
 const Footer: React.FC = () => {
 	const { t } = useTranslation();
-	const baseIconParameters: Record<string, string | number> = {
-		width: 32,
-		height: 32,
-	};
 	const socialMedia: string[] = ["telegram", "facebook", "instagram"];
 	const links: LinkFooter[] = [
 		{ router: AppRouter.MAINPAGE, text: "footer.contacts" },
@@ -71,9 +67,8 @@ const Footer: React.FC = () => {
 						{socialMedia.map(social => (
 							<a
 								key={social}
-								href="#"
-								className={styles.socialLink}>
-								<IconElement {...{ name: social, ...baseIconParameters }} />
+								href="#">
+								<IconElement {...{ name: social, style: styles.socialLinks }} />
 							</a>
 						))}
 					</nav>

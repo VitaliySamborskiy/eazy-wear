@@ -6,11 +6,27 @@
 	display: flex;
 	justify-content: space-between;
 	gap: 30px;
+
+	@include breakpoints-max-width(md) {
+		flex-direction: column;
+	}
+
+	@include breakpoints-max-width(sm) {
+		gap: 40px;
+	}
 }
 
 .newsText {
+	@include breakpoints-max-width(lg) {
+		flex: 0.8;
+	}
+
 	h2 {
 		line-height: 130%;
+
+		@include breakpoints-max-width(lg) {
+			font-size: 20px;
+		}
 	}
 
 	p {
@@ -19,6 +35,11 @@
 		width: 80%;
 		line-height: 170%;
 		letter-spacing: 0.02em;
+
+		@include breakpoints-max-width(sm) {
+			margin-top: 13px;
+			width: 100%;
+		}
 	}
 }
 
@@ -27,6 +48,18 @@
 	display: flex;
 	align-items: center;
 	gap: 25px;
+
+	@include breakpoints-max-width(lg) {
+		flex: 1;
+		gap: 15px;
+		flex-wrap: wrap;
+		padding-top: 0;
+		justify-content: space-between;
+	}
+
+	@include breakpoints-max-width(sm) {
+		gap: 27px;
+	}
 
 	input {
 		border: 1px solid $greyInactive;
@@ -42,6 +75,20 @@
 		&::placeholder {
 			color: $black;
 			font-size: 18px;
+
+			@include breakpoints-max-width(sm) {
+				font-size: 14px;
+			}
+		}
+
+		@include breakpoints-max-width(lg) {
+			flex: 1 1 327px;
+			width: 100%;
+		}
+
+		@include breakpoints-max-width(sm) {
+			font-size: 14px;
+			padding: 11px 13px;
 		}
 	}
 
@@ -62,6 +109,15 @@
 			color: $black;
 			background: $white;
 		}
+
+		@include breakpoints-max-width(lg) {
+			flex: 1;
+			width: 100%;
+		}
+
+		@include breakpoints-max-width(sm) {
+			padding: 9px 0;
+		}
 	}
 }
 
@@ -71,6 +127,20 @@
 	display: flex;
 	gap: 30px;
 	padding: 30px 0 60px;
+
+	@include breakpoints-max-width(lg) {
+		padding: 30px 0 35px;
+	}
+
+	@include breakpoints-max-width(md) {
+		margin-top: 33px;
+		flex-wrap: wrap;
+		row-gap: 15px;
+	}
+
+	@include breakpoints-max-width(sm) {
+		padding: 97px 0 35px;
+	}
 
 	&:after {
 		content: "";
@@ -90,10 +160,23 @@
 	font-size: $title;
 	line-height: 130%;
 
+	@include breakpoints-max-width(lg) {
+		font-size: 26px;
+	}
+
 	&Block {
 		padding: 24px 0 0 5px;
 		flex: 2.3;
 		min-width: 200px;
+
+		@include breakpoints-max-width(lg) {
+			flex: 2;
+		}
+
+		@include breakpoints-max-width(lg) {
+			width: 100%;
+			flex: 1 1 350px;
+		}
 
 		p {
 			margin-top: 33px;
@@ -102,6 +185,15 @@
 			font-family: $mainFont;
 			line-height: 140%;
 			letter-spacing: 0;
+
+			@include breakpoints-max-width(lg) {
+				margin-top: 15px;
+				font-size: 18px;
+			}
+
+			@include breakpoints-max-width(sm) {
+				font-family: $supportFonts;
+			}
 		}
 	}
 }
@@ -113,6 +205,16 @@
 
 	nav {
 		margin-top: 25px;
+
+		@include breakpoints-max-width(md) {
+			margin-top: 16px;
+		}
+	}
+}
+
+.info {
+	nav {
+		width: 200px;
 	}
 }
 
@@ -122,6 +224,24 @@
 	nav {
 		display: flex;
 		gap: 40px;
+
+		@include breakpoints-max-width(lg) {
+			gap: 25px;
+		}
+
+		@include breakpoints-max-width(sm) {
+			width: 200px;
+			position: absolute;
+			top: 34px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	@include breakpoints-max-width(sm) {
+		h3 {
+			display: none;
+		}
 	}
 }
 
@@ -129,13 +249,23 @@
 	color: $white;
 	font-family: $supportFonts;
 	font-size: 18px;
-	margin-bottom: 20px;
+
+	@include breakpoints-max-width(lg) {
+		font-size: 14px;
+	}
 }
 
 .socialLinks {
+	width: 32px;
+	height: 32px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+
+	@include breakpoints-max-width(sm) {
+		width: 48px;
+		height: 48px;
+	}
 }
 
 .link {
@@ -143,7 +273,12 @@
 	position: relative;
 	color: $white;
 	transition: transform 0.5s ease-in-out;
-	margin: 0 90px 22px 0;
+	margin: 0 15px 22px 0;
+
+	@include breakpoints-max-width(lg) {
+		font-size: 14px;
+		margin: 0 47px 16px 0;
+	}
 
 	&:after {
 		content: "";
@@ -162,6 +297,14 @@
 		&:after {
 			transform: scaleX(1);
 			transform-origin: left;
+
+			@include breakpoints-max-width(md) {
+				display: none;
+			}
 		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
 	}
 }
