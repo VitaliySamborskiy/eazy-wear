@@ -20,7 +20,7 @@ i18n
 		backend: {
 			loadPath: `./locales/{{lng}}/{{ns}}.json`,
 		},
-		ns: ["components"],
+		ns: ["components", "category-product", "about-us"],
 		defaultNS: "components",
 	});
 

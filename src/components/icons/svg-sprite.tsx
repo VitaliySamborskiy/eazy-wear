@@ -286,6 +286,102 @@ const SvgSprite: React.FC = () => {
 					fill="#F5F5F5"
 				/>
 			</symbol>
+
+			<symbol
+				id="arrow"
+				viewBox="0 0 24 25">
+				<path
+					d="M10 18.5L16 12.5L10 6.5"
+					stroke-width="2"
+					stroke-linecap="round"
+				/>
+			</symbol>
+
+			<symbol
+				id="arrow-tail"
+				viewBox="0 0 24 24">
+				<path
+					d="M15.75 7.72461L0.75 7.72461"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+				<path
+					d="M9.70117 1.701L15.7512 7.725L9.70117 13.75"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+			</symbol>
+
+			<symbol
+				id="lorry"
+				viewBox="0 0 24 24">
+				<path
+					d="M4 17H2V7H15V17H8"
+					stroke="#383838"
+					stroke-width="2"
+					stroke-linecap="round"
+				/>
+				<path
+					d="M20 17H22V12.5556L20 9H15V17H16"
+					stroke="#383838"
+					stroke-width="2"
+					stroke-linecap="round"
+				/>
+				<circle
+					cx="6"
+					cy="17"
+					r="2"
+					stroke="#383838"
+					stroke-width="2"
+				/>
+				<circle
+					cx="18"
+					cy="17"
+					r="2"
+					stroke="#383838"
+					stroke-width="2"
+				/>
+			</symbol>
+
+			<symbol
+				id="clock"
+				viewBox="0 0 24 24">
+				<path
+					d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+					stroke="#383838"
+					stroke-width="2"
+				/>
+				<path
+					d="M12 5V12L16 16"
+					stroke="#383838"
+					stroke-width="2"
+					stroke-linecap="round"
+				/>
+			</symbol>
+
+			<symbol
+				id="bag"
+				viewBox="0 0 24 24">
+				<rect
+					x="5"
+					y="7"
+					width="14"
+					height="12"
+					stroke="#383838"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+				<path
+					d="M8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7"
+					stroke="#383838"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+			</symbol>
 		</svg>
 	);
 };

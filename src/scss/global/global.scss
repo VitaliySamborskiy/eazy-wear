@@ -33,6 +33,7 @@ h6 {
 	font-family: $mainFont;
 	font-size: $title;
 	font-weight: $regular;
+	letter-spacing: 0.01em;
 }
 
 p,
@@ -43,7 +44,11 @@ span {
 	font-weight: $regular;
 	font-size: $text;
 	line-height: 150%;
-	letter-spacing: 0.02em;
+	letter-spacing: 0.01em;
+}
+
+p {
+	color: $grey;
 }
 
 button,
