@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IconElement } from "../components.tsx";
 
 import { Link } from "react-router-dom";
-import { AppRouter } from "../../enums/app-router.enum.ts";
+import { AppRouter } from "../../enums/app-router.enum";
 
 import type { Icon } from "../icons/type/types.ts";
 
@@ -25,7 +25,7 @@ const Header: React.FC = () => {
 		name: "search",
 		style: "header__svg-search",
 		color: "transparent",
-		height: 36,
+		height: 36, 
 		width: 36,
 	};
 
