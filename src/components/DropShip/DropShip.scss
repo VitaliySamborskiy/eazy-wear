@@ -1,0 +1,11 @@
+@import "/src/scss/global/vars";
+
+.drop {
+    &__action-text {
+		padding: 4px 0;
+		font-size: 14px;
+		color: $black;
+		text-align: center;
+		background: $white;
+	}
+}
