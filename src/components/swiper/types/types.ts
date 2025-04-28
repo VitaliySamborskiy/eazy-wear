@@ -11,7 +11,8 @@ type SwiperProps = {
 	swiperSupportStyles?: SwiperSection;
 	title: string;
 	slideComponents: React.FC<Category>;
-	slideData: Category[];
+	slideData?: Category[];
+	renderFunction: () => React.ReactNode;
 };
 
 export type { SwiperProps };

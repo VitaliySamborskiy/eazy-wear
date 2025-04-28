@@ -1,0 +1,43 @@
+@import "/src/scss/global/vars";
+@import "/src/scss/global/mixin";
+
+.reviewTile {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 20px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+}
+
+.imageContainer img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.reviewContent {
+	width: 100%;
+	display: grid;
+	grid-template-rows: auto auto auto 1fr;
+	gap: 10px;
+}
+
+.rating {
+	display: flex;
+}
+
+.star {
+	color: gold;
+	font-size: 20px;
+}
+
+.reviewerInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.reviewText {
+	font-size: 16px;
+	line-height: 1.5;
+}

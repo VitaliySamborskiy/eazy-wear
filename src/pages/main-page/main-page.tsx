@@ -1,5 +1,7 @@
+import { SwiperSlide } from "swiper/react";
 import { AboutUs, CategoryCard, SwiperSection } from "../../components/components.tsx";
 import { type SwiperProps } from "../../components/swiper/types/types.ts";
+import ReviewsSection from "../../components/main/reviews/reviewsSection.tsx";
 
 const MainPage = () => {
 	const components: SwiperProps = {
@@ -25,6 +27,13 @@ const MainPage = () => {
 		loop: true,
 		title: `slider.title`,
 		slideComponents: CategoryCard,
+		renderFunction: () => {
+			return components.slideData.map((item, index) => (
+				<SwiperSlide key={index}>
+					<components.slideComponents {...item} />
+				</SwiperSlide>
+			));
+		},
 		slideData: [
 			{
 				title: "jacket",
@@ -61,6 +70,7 @@ const MainPage = () => {
 		<>
 			<AboutUs />
 			<SwiperSection {...components} />
+			<ReviewsSection />
 		</>
 	);
 };

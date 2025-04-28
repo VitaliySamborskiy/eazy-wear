@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import { useTranslation } from "react-i18next";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { IconElement } from "../components.tsx";
 
@@ -10,6 +10,29 @@ import { type Icon } from "../icons/type/types.ts";
 
 import "swiper/scss";
 import styles from "./swiper.module.scss";
+
+const SWIPER_SETTINGS = {
+	swiperBreakpoints: {
+		320: {
+			slidesPerView: 3.3,
+			spaceBetween: 18,
+		},
+		576: {
+			slidesPerView: 2.7,
+		},
+		768: {
+			slidesPerView: 3.2,
+		},
+		1141: {
+			slidesPerView: 3,
+		},
+		1440: {
+			slidesPerView: 3.05,
+		},
+	},
+	spaceBetween: 20,
+	loop: true,
+};
 
 const SwiperSection: React.FC<SwiperProps> = components => {
 	const { t } = useTranslation();
@@ -50,10 +73,10 @@ const SwiperSection: React.FC<SwiperProps> = components => {
 				<Swiper
 					className={styles.swiper}
 					modules={[Navigation]}
-					breakpoints={components.swiperBreakpoints}
+					breakpoints={SWIPER_SETTINGS.swiperBreakpoints}
 					slidesPerView={components.slidesPerView}
-					spaceBetween={components.spaceBetween}
-					loop={components.loop}
+					spaceBetween={SWIPER_SETTINGS.spaceBetween}
+					loop={SWIPER_SETTINGS.loop}
 					onSwiper={swiper => {
 						setTimeout(() => {
 							if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
@@ -64,11 +87,7 @@ const SwiperSection: React.FC<SwiperProps> = components => {
 							}
 						}, 0);
 					}}>
-					{components.slideData.map((item, index) => (
-						<SwiperSlide key={index}>
-							<components.slideComponents {...item} />
-						</SwiperSlide>
-					))}
+					{components.renderFunction()}
 				</Swiper>
 			</div>
 		</section>
