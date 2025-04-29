@@ -48,39 +48,101 @@
 .pricebascet {
 	display: flex;
 	justify-content: space-between;
+	align-items: end;
   padding-left: 12px;
   padding-right: 12px;
+  height: 60px;
 }
+// .pricebascet {
+// 	//position: relative;
+// 	display: flex;
+// 	//justify-content: center; /* Центрируем элементы по горизонтали */
+// 	align-items: center; /* Выравниваем по вертикали */
+//   }
+
+  .priceContainer {
+	position: relative;
+	display: flex;
+	align-items: end;
+	min-width: 265px;
+	height: 60px; 
+  }
 .toplinecard {
 	display: flex;
 	justify-content: space-between;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding:12px;
 }
 .new{
-	background-color: $yellow;
-	padding:5px;
+	width: 99px;
+	height: 35px;
+	background-color: $orange;
+font-weight: 400;
+font-size: 18px;
+line-height: 160%;
+letter-spacing: 0.18px;
+display: flex;         
+align-items: center;       
+justify-content: center;     
+
+text-align: center;
+border-radius: 4px;
 }
 .price {
-	font-size: 16px;
+
+font-weight: 400;
+font-size: 32px;
+line-height: 130%;
+letter-spacing: 0.32px;
+
+
+	
 	color: $black;
-	margin-bottom: 12px;
+	
 
 	strong {
 		font-weight: 600;
 	}
 
 	.originalPrice {
-		background-color: $yellow;
-		font-size: 14px;
+		position: absolute;
+		top: 0;
+		right: 0;
+ 
+		background-color: $orange;
 		text-decoration: line-through;
-		padding-left: 20px;
-		margin-right: 8px;
-		font-weight: 400;
+		color: $white;
+font-weight: 400;
+font-size: 24px;
+line-height: 130%;
+letter-spacing: 0.24px;
+text-transform: lowercase;
+text-decoration: line-through;
+width: 129px;
+height: 34px;
+
 	}
 }
 
+.basket {
+	width: 78px;
+	height: 40px;
+	background-color: #000000; /* черный фон */
+	border: none; /* убираем стандартные рамки */
+	padding: 10px;
+	border-radius: 8px; /* скругленные углы */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  
+	/* Изменение фона при наведении */
+	&:hover {
+	  background-color: #333333; /* немного светлее при наведении */
+	}
+  }
 .button {
+	
 	background-color: $black;
 	color: $white;
 	font-size: 14px;
@@ -101,3 +163,19 @@
 		font-size: 16px;
 	}
 }
+.svgBasket {
+	fill: #ffffff; /* белая иконка */
+  }
+
+  .heartOutlined {
+	stroke: #383838;
+	fill: none;
+	transition: fill 0.2s ease;
+  }
+  
+  .heartFilled {
+	stroke: #383838;
+	fill: #383838;
+	transition: fill 0.2s ease;
+  }
+   
