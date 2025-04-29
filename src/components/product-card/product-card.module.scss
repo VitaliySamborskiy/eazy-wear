@@ -1,0 +1,181 @@
+@import "/src/scss/global/vars.scss";
+@import "/src/scss/global/global.scss";
+@import "/src/scss/global/mixin.scss";
+
+.card {
+	background-color: $white;
+	border: none;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&:hover {
+		transform: translateY(-4px);
+	}
+}
+
+.image {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	aspect-ratio: 3 / 4; // ~300x400px
+	border-radius: 8px;
+	margin-bottom: 12px;
+
+	@include breakpoints-max-width(sm) {
+		aspect-ratio: 3 / 3.5;
+	}
+}
+
+.title {
+	font-size: 12px;
+	font-weight: 500;
+	color: $black;
+	margin: 0 0 8px;
+	line-height: 1.4;
+  padding-left: 12px;
+  padding-right: 12px;
+
+	@include breakpoints-max-width(sm) {
+		font-size: 14px;
+	}
+}
+.pricebascet {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+  padding-left: 12px;
+  padding-right: 12px;
+  height: 60px;
+}
+// .pricebascet {
+// 	//position: relative;
+// 	display: flex;
+// 	//justify-content: center; /* Центрируем элементы по горизонтали */
+// 	align-items: center; /* Выравниваем по вертикали */
+//   }
+
+  .priceContainer {
+	position: relative;
+	display: flex;
+	align-items: end;
+	min-width: 265px;
+	height: 60px; 
+  }
+.toplinecard {
+	display: flex;
+	justify-content: space-between;
+  padding:12px;
+}
+.new{
+	width: 99px;
+	height: 35px;
+	background-color: $orange;
+font-weight: 400;
+font-size: 18px;
+line-height: 160%;
+letter-spacing: 0.18px;
+display: flex;         
+align-items: center;       
+justify-content: center;     
+
+text-align: center;
+border-radius: 4px;
+}
+.price {
+
+font-weight: 400;
+font-size: 32px;
+line-height: 130%;
+letter-spacing: 0.32px;
+
+
+	
+	color: $black;
+	
+
+	strong {
+		font-weight: 600;
+	}
+
+	.originalPrice {
+		position: absolute;
+		top: 0;
+		right: 0;
+ 
+		background-color: $orange;
+		text-decoration: line-through;
+		color: $white;
+font-weight: 400;
+font-size: 24px;
+line-height: 130%;
+letter-spacing: 0.24px;
+text-transform: lowercase;
+text-decoration: line-through;
+width: 129px;
+height: 34px;
+
+	}
+}
+
+.basket {
+	width: 78px;
+	height: 40px;
+	background-color: #000000; /* черный фон */
+	border: none; /* убираем стандартные рамки */
+	padding: 10px;
+	border-radius: 8px; /* скругленные углы */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  
+	/* Изменение фона при наведении */
+	&:hover {
+	  background-color: #333333; /* немного светлее при наведении */
+	}
+  }
+.button {
+	
+	background-color: $black;
+	color: $white;
+	font-size: 14px;
+	padding: 10px 12px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background 0.2s ease;
+	text-align: center;
+	font-weight: 500;
+
+	&:hover {
+		background-color: darken($black, 8%);
+	}
+
+	@include breakpoints-max-width(sm) {
+		padding: 12px;
+		font-size: 16px;
+	}
+}
+.svgBasket {
+	fill: #ffffff; /* белая иконка */
+  }
+
+  .heartOutlined {
+	stroke: #383838;
+	fill: none;
+	transition: fill 0.2s ease;
+  }
+  
+  .heartFilled {
+	stroke: #383838;
+	fill: #383838;
+	transition: fill 0.2s ease;
+  }
+   
