@@ -11,6 +11,7 @@ import { type CustomerBenefit } from "./types/types.ts";
 import styles from "./about-us.module.scss";
 
 const AboutUs: React.FC = () => {
+	//  hello from DV
 	const { t } = useTranslation();
 	const iconBase: Record<string, string | number> = {
 		width: 24,
