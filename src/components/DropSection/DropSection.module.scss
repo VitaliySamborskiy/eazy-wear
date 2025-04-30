@@ -1,4 +1,6 @@
-// @import "/src/scss/global/global.scss";
+@import "../../scss/global/vars.scss";
+@import "../../scss/global/mixin";
+@import "../../scss/global/global.scss";
 
 .visuallyHidden {
     position: absolute;
@@ -18,8 +20,8 @@
     padding-bottom: 40px;
   }
 
-  .container {
-    max-width: 1440px;
-    padding-left: 20px;
-    padding-right: 20px;
+  .dropContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
