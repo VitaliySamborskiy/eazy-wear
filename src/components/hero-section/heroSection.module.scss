@@ -1,85 +1,58 @@
 .hero {
   position: relative;
-  width: 100%;
-  height: 100vh;
+  height: 630px;
+  width: 1440px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: var(--background-color, #f5f5f5);
-  transition: background-color 0.5s ease-in-out;
+  justify-content: flex-start;
   
   .background {
     position: absolute;
     inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 1;
   
     img {
-      width: auto;
-      max-height: 100%;
+      width: 140%;
+      height: 140%; 
       object-fit: contain;
-      opacity: 0.7; 
-      transition: opacity 0.5s ease-in-out;
+      margin-top: 180px;
+      object-position: right;   
+
     }
   }
-  
   
 
   .content {
-    position: relative;
     z-index: 10;
-    max-width: 600px;
-    text-align: center;
-    background: var(--content-bg, rgba(255, 255, 255, 0.3));
-    backdrop-filter: blur(10px);
-    padding: 20px 40px;
-    border-radius: 12px;
+    max-width: 800px;
+    height: 418px;
+    padding: 187px 20px;
     transition: background 0.5s ease-in-out;
+    
 
     h1 {
-      font-size: 48px;
-      font-weight: bold;
-      color: var(--heading-color, #222);
-      text-transform: uppercase;
-      transition: color 0.5s ease-in-out;
+      width: 857px;
+      font-size: 88px;
+      color: var(--heading-color, #383838);
     }
 
     p {
+      width: 772px;
       margin-top: 10px;
-      font-size: 19px;
+      font-size: 28px;
       color: var(--text-color, #444);
-      transition: color 0.5s ease-in-out;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      font-weight: bold;
-      background: var(--button-bg, #ffcc00);
-      color: var(--button-text-color, #222);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-
-      &:hover {
-        background: var(--button-hover-bg, #ffdb4d);
-      }
-    }
+   
   }
 
   .bgText {
-    position: absolute;
+    position: fixed;
     bottom: 5%;
     left: 5%;
     font-size: 80px;
-    font-weight: bold;
-    color: var(--bg-text-color, rgba(255, 255, 255, 0.2));
-    text-transform: uppercase;
-    transition: color 0.5s ease-in-out;
+    color: var(--bg-text-color, rgba(225, 218, 218, 0.525));
+    pointer-events: none; 
   }
+  
 }

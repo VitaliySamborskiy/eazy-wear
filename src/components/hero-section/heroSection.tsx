@@ -9,11 +9,10 @@ const HeroSection = () => {
       </picture>
 
       <div className={styles.content}>
-        <h1>YOUR STYLE, YOUR FREEDOM</h1>
+        <h1>Ваш стиль, ваша свобода</h1>
         <p>
-          Online - men's clothing store <strong>EAZEWEAR</strong>, always happy to welcome new customers!
+        Інтернет - магазин чоловічого одягу <strong>EAZEWEAR</strong>, завжди радий вітати нових клієнтів!
         </p>
-        <button className={styles.button}>Details</button>
       </div>
 
       <span className={styles.bgText}>EAZYWEAR</span>
