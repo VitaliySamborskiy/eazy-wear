@@ -1,8 +1,9 @@
 import { CategoryCard, SwiperSection } from "../../components/components.tsx";
 import { type SwiperProps } from "../../components/swiper/types/types.ts";
+import { type Category } from "../../components/category-card/types/types.ts";
 
 const MainPage = () => {
-	const components: SwiperProps = {
+	const components: SwiperProps<Category> = {
 		swiperBreakpoints: {
 			320: {
 				slidesPerView: 3.3,
@@ -23,6 +24,7 @@ const MainPage = () => {
 		},
 		spaceBetween: 20,
 		loop: true,
+		swiperSupportStyles: "category",
 		title: `slider.title`,
 		slideComponents: CategoryCard,
 		slideData: [

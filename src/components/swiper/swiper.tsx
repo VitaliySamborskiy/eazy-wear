@@ -7,11 +7,12 @@ import { IconElement } from "../components.tsx";
 
 import { type SwiperProps } from "./types/types.ts";
 import { type Icon } from "../icons/type/types.ts";
+import { type Category } from "../category-card/types/types.ts";
 
 import "swiper/scss";
 import styles from "./swiper.module.scss";
 
-const SwiperSection: React.FC<SwiperProps> = components => {
+const SwiperSection: React.FC<SwiperProps<Category>> = components => {
 	const { t } = useTranslation();
 	const refNext = useRef<HTMLButtonElement | null>(null);
 	const refPrev = useRef<HTMLButtonElement | null>(null);
@@ -48,10 +49,9 @@ const SwiperSection: React.FC<SwiperProps> = components => {
 					</div>
 				</div>
 				<Swiper
-					className={styles.swiper}
+					className={`${styles.swiper} ${components.swiperSupportStyles}`}
 					modules={[Navigation]}
 					breakpoints={components.swiperBreakpoints}
-					slidesPerView={components.slidesPerView}
 					spaceBetween={components.spaceBetween}
 					loop={components.loop}
 					onSwiper={swiper => {
