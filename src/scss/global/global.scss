@@ -33,21 +33,31 @@ h6 {
 	font-family: $mainFont;
 	font-size: $title;
 	font-weight: $regular;
+	letter-spacing: 0.01em;
 }
 
 p,
-label {
+label,
+span {
 	color: $grey;
 	font-family: $supportFonts;
 	font-weight: $regular;
 	font-size: $text;
 	line-height: 150%;
-	letter-spacing: 0.02em;
+	letter-spacing: 0.01em;
+}
+
+p {
+	color: $grey;
+}
+
+button,
+input {
+	font-family: $supportFonts;
+	font-weight: $regular;
 }
 
 button {
-	font-family: $supportFonts;
-	font-weight: $regular;
 	text-align: center;
 }
 

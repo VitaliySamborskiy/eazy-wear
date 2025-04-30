@@ -1,0 +1,121 @@
+@import "/src/scss/global/vars";
+@import "/src/scss/global/mixin";
+
+.content {
+	margin-top: 208px;
+
+	@include breakpoints-max-width(xl) {
+		width: 101.5%;
+		padding-right: 2%;
+		overflow: hidden;
+	}
+
+	@include breakpoints-max-width(lg) {
+		width: 102.5%;
+	}
+
+	@include breakpoints-max-width(md) {
+		width: 103.3%;
+	}
+
+	@include breakpoints-max-width(sm) {
+		position: relative;
+		left: -6%;
+		width: 111.5%;
+		padding-right: 5%;
+	}
+}
+
+.textContent {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title {
+	line-height: 130%;
+
+	@include breakpoints-max-width(lg) {
+		padding-left: 6%;
+		font-size: 20px;
+	}
+}
+
+.navigate {
+	display: flex;
+	gap: 6px;
+
+	@include breakpoints-max-width(md) {
+		gap: 7px;
+	}
+}
+
+.swiper.category {
+	padding: 2px;
+	width: 102%;
+	margin-top: 47px;
+
+	@include breakpoints-max-width(xl) {
+		width: 1440px;
+	}
+
+	@include breakpoints-max-width(lg) {
+		width: 1140px;
+		margin-top: 24px;
+	}
+
+	@include breakpoints-max-width(md) {
+		width: 738px;
+	}
+
+	@include breakpoints-max-width(sm) {
+		width: 570px;
+		padding-left: 6%;
+	}
+}
+
+//example of using styles
+
+//.swiper.popular {
+//	padding: 2px;
+//	width: 102%;
+//	margin-top: 47px;
+//
+//	@include breakpoints-max-width(xl) {
+//		width: 1440px;
+//	}
+//
+//	@include breakpoints-max-width(lg) {
+//		width: 1140px;
+//		margin-top: 24px;
+//	}
+//
+//	@include breakpoints-max-width(md) {
+//		width: 738px;
+//	}
+//
+//	@include breakpoints-max-width(sm) {
+//		width: 570px;
+//		padding-left: 6%;
+//	}
+//}
+
+.arrowRight,
+.arrowLeft {
+	stroke: $greyInactive;
+	transition: stroke 0.5s ease-in-out;
+
+	&:hover {
+		stroke: $grey-light;
+	}
+
+	@include breakpoints-max-width(md) {
+		&:hover {
+			stroke: none;
+		}
+	}
+}
+
+.arrowLeft {
+	transform: rotate(180deg);
+}

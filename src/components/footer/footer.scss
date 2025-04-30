@@ -1,0 +1,85 @@
+@import '../../styles/variables.scss';
+
+.footer {
+  background-color: $black;
+  color: $white;
+  padding: 60px 0;
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  &__logo-block {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  &__logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__slogan {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  &__info, &__social {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  &__heading {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: $primary;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0;
+
+    &__content {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+}

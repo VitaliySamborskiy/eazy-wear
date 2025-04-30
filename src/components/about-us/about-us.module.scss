@@ -1,0 +1,203 @@
+@import "/src/scss/global/vars";
+@import "/src/scss/global/mixin";
+
+.benefits {
+	margin-top: 200px;
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+
+	@include breakpoints-max-width(md) {
+		margin-top: 80px;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	article {
+		padding: 10px 18px 10px 8px;
+		width: 384px;
+		display: flex;
+		border: 1px solid $grey-light-2;
+		border-radius: 4px;
+		gap: 10px;
+
+		@include breakpoints-max-width(md) {
+			width: 100%;
+			gap: 8px;
+			padding: 15px 8px;
+		}
+
+		@include breakpoints-max-width(xs) {
+			padding: 8px;
+		}
+	}
+}
+
+.descriptionBlock {
+	h3 {
+		font-size: $text;
+
+		@include breakpoints-max-width(lg) {
+			font-size: 20px;
+		}
+
+		@include breakpoints-max-width(xs) {
+			font-size: 16px;
+		}
+	}
+
+	p {
+		margin-top: 15px;
+		font-size: $mini-text;
+
+		@include breakpoints-max-width(md) {
+			margin-top: 8px;
+			font-size: 12px;
+		}
+	}
+}
+
+.content {
+	margin-top: 135px;
+	width: 91%;
+	display: flex;
+	justify-content: space-between;
+
+	@include breakpoints-max-width(lg) {
+		width: 100%;
+		margin-top: 95px;
+	}
+
+	@include breakpoints-max-width(md) {
+		margin-top: 80px;
+		gap: 15px;
+	}
+
+	@include breakpoints-max-width(sm) {
+		flex-direction: column;
+		gap: 60px;
+	}
+
+	@include breakpoints-max-width(xs) {
+		margin-top: 40px;
+		gap: 30px;
+	}
+
+	h2 {
+		font-family: $mainFont;
+		font-size: $title;
+		font-weight: $regular;
+		color: $black;
+		flex: 0 0 30%;
+
+		@include breakpoints-max-width(lg) {
+			font-size: 20px;
+			flex: 0 0 15%;
+		}
+
+		@include breakpoints-max-width(md) {
+			flex: initial;
+			width: 120px;
+		}
+	}
+}
+
+.textBlock {
+	flex: 0 0 63%;
+
+	@include breakpoints-max-width(lg) {
+		flex: 0 0 75%;
+	}
+
+	@include breakpoints-max-width(md) {
+		flex: initial;
+		width: 75%;
+	}
+
+	@include breakpoints-max-width(sm) {
+		width: 100%;
+	}
+
+	p {
+		font-family: $supportFonts;
+		font-size: $text;
+		font-weight: $regular;
+		line-height: 160%;
+		opacity: 0.6;
+
+		@include breakpoints-max-width(lg) {
+			font-size: 16px;
+		}
+
+		@include breakpoints-max-width(sm) {
+			line-height: 150%;
+		}
+
+		@include breakpoints-max-width(xs) {
+			font-size: 12px;
+		}
+	}
+}
+
+.link {
+	padding: 5px 5px 0;
+	margin-top: 35px;
+	display: inline-flex;
+	align-items: center;
+	gap: 20px;
+	box-shadow: inset 0 0 0 0 $black;
+	transition: box-shadow 0.5s ease-in-out;
+
+	@include breakpoints-max-width(lg) {
+		margin-top: 50px;
+		gap: 10px;
+	}
+
+	@include breakpoints-max-width(xs) {
+		margin-top: 25px;
+	}
+
+	&:hover {
+		box-shadow: inset 200px 0 0 0 $black;
+
+		.linkText {
+			color: $white;
+		}
+
+		.svg {
+			stroke: $white;
+		}
+
+		@include breakpoints-max-width(md) {
+			box-shadow: inset 0 0 0 0 $black;
+
+			.linkText {
+				color: $black;
+			}
+
+			.svg {
+				stroke: $black;
+			}
+		}
+	}
+
+	&Text {
+		font-weight: $regular;
+		font-family: $mainFont;
+		transition: color 0.5s ease-in-out;
+
+		@include breakpoints-max-width(lg) {
+			font-size: $mini-text;
+		}
+	}
+}
+
+.svg {
+	padding-top: 5px;
+	stroke: $black;
+	transition: stroke 0.5s ease-in-out;
+
+	@include breakpoints-max-width(lg) {
+		padding-top: 6px;
+	}
+}
