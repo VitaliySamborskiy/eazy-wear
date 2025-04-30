@@ -1,4 +1,4 @@
 export { Header } from "./header/header.tsx";
 export { IconElement } from "./icons/icon-element.tsx";
 export { SvgSprite } from "./icons/svg-sprite.tsx";
-export { DropShip } from "./DropShip/DropShip.tsx"
+export { DropSection } from "./DropSection/DropSection.tsx"

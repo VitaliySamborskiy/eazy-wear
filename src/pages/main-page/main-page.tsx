@@ -1,9 +1,9 @@
-import { DropShip } from "../../components/components";
+import { DropSection } from "../../components/components";
 
 const MainPage = () => {
 	return(
 		<>
-		<DropShip />
+		<DropSection />
 		</>
 	)
 }
