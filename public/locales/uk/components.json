@@ -13,5 +13,16 @@
   "burger.popularProducts": "Популярні товари",
   "burger.dropshipping": "Дропшипінг",
   "burger.sales": "Знижки та Акції",
-  "slider.title": "Категорія товару"
+  "slider.title": "Категорія товару",
+  "footer.news.title": "Підписуйся на новини",
+  "footer.news.description":"Підписуйся та першим дізнавайся про акції та вигідні пропозиції.",
+  "footer.news.button": "Підписатися",
+  "footer.slogan": "Ваш стиль, ваша свобода",
+  "footer.info": "Інформація",
+  "footer.contacts": "Контакти",
+  "footer.about": "Про нас",
+  "footer.delivery": "Оплата і доставка",
+  "footer.social": "Соціальні мережі",
+  "footer.aria.social": "соціальні мережі",
+  "footer.aria.menu": "навігація меню"
 }
