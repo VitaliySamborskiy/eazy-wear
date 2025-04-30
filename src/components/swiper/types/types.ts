@@ -1,17 +1,16 @@
 import React from "react";
-import { type Category } from "../../category-card/types/types.ts";
+import type { SwiperOptions } from "swiper/types";
 
-type SwiperSection = "category" | "popular" | "reviews";
+type SwiperSectionName = "category" | "popular" | "reviews";
 
-type SwiperProps = {
-	slidesPerView?: number;
-	spaceBetween?: number;
+type SwiperProps<T> = {
 	loop?: boolean;
-	swiperBreakpoints?: Record<number, Record<string, number>>;
-	swiperSupportStyles?: SwiperSection;
+	spaceBetween?: number;
+	swiperBreakpoints?: SwiperOptions["breakpoints"];
+	swiperSupportStyles?: SwiperSectionName;
 	title: string;
-	slideComponents: React.FC<Category>;
-	slideData: Category[];
+	slideComponents: React.FC<T>;
+	slideData: T[];
 };
 
 export type { SwiperProps };
