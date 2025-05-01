@@ -18,7 +18,6 @@ const DropCard = () => {
           <button type="button" className={styles.dropBtn}>Більше</button>
         </li>
     </ul>
-    <button></button>
   </div>
   );
 };
