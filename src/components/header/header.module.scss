@@ -5,7 +5,8 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: $white;
+	background: $blue-light;
+	z-index: 3;
 
 	@include breakpoints-max-width(md) {
 		padding: 0 4px;
@@ -13,7 +14,7 @@
 }
 
 .actionText {
-	padding: 4px 0;
+	padding: 4px 0 3px;
 	font-size: 14px;
 	color: $white;
 	text-align: center;
@@ -29,13 +30,15 @@
 }
 
 .mainContent {
-	margin-top: 10px;
+	margin-top: 11px;
 	display: flex;
 	justify-content: space-between;
 	gap: 20px;
 
 	@include breakpoints-max-width(md) {
 		gap: 10px;
+		margin: 0;
+		padding: 10px 0 8px;
 	}
 
 	&Center {
@@ -53,7 +56,7 @@
 }
 
 .logo {
-	margin-top: 8px;
+	margin-top: 9px;
 	font-size: 24px;
 	font-family: $mainFont;
 	color: $black;
@@ -74,18 +77,18 @@
 
 .switchLanguage {
 	display: flex;
-	gap: 8px;
+	gap: 6px;
 	position: relative;
 
 	&:after {
 		content: "";
 		position: absolute;
-		top: 15px;
-		left: 51%;
+		top: 14px;
+		left: 49%;
 		display: flex;
 		background-color: $grey;
 		width: 2px;
-		height: 18px;
+		height: 16px;
 
 		@include breakpoints-max-width(md) {
 			top: 5px;
@@ -96,10 +99,17 @@
 }
 
 .switchButton {
-	font-family: $supportFonts;
-	font-weight: 200;
-	font-size: 20px;
-	line-height: 160%;
+	color: $grey;
+	font-family: $mainFont;
+	font-size: 18px;
+
+	&:hover {
+		color: $black;
+
+		@include breakpoints-max-width(md) {
+			color: $grey;
+		}
+	}
 
 	@include breakpoints-max-width(lg) {
 		font-size: 16px;
@@ -120,8 +130,8 @@
 
 .searchButton {
 	position: absolute;
-	top: 9%;
-	left: 11%;
+	top: 11%;
+	left: 11.5%;
 
 	@include breakpoints-max-width(lg) {
 		left: 3%;
@@ -130,9 +140,9 @@
 
 .searchLabel {
 	position: absolute;
-	font-size: 17px;
-	top: 23%;
-	left: 23%;
+	font-size: 16px;
+	top: 26%;
+	left: 24%;
 	opacity: 1;
 	transition:
 		top 0.5s ease-in-out,
@@ -149,7 +159,7 @@
 }
 
 .searchInput {
-	margin: 3px 0 0 9%;
+	margin: 4px 0 0 10%;
 	padding: 0 10px 0 64px;
 	width: 454px;
 	height: 40px;
@@ -222,10 +232,17 @@
 }
 
 .navigate {
-	margin-top: 45px;
+	margin-top: 43px;
+	padding-bottom: 15px;
 
 	@include breakpoints-max-width(lg) {
 		margin-top: 25px;
+		padding-bottom: 8px;
+	}
+
+	@include breakpoints-max-width(md) {
+		padding-bottom: 0;
+		margin-top: 0;
 	}
 
 	&:after {
@@ -271,8 +288,8 @@
 
 	&Item {
 		position: relative;
-		width: 100%;
-		text-align: center;
+		//width: 100%;
+		//text-align: center;
 
 		&:hover {
 			&:after {
@@ -285,9 +302,9 @@
 			content: "";
 			position: absolute;
 			top: 36px;
-			left: 8%;
+			left: -4%;
 			display: flex;
-			width: 85%;
+			width: 110%;
 			height: 2px;
 			background: $black;
 			transform: scaleX(0);

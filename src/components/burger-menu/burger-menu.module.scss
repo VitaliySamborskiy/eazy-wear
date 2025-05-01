@@ -7,14 +7,14 @@
 	@include breakpoints-max-width(md) {
 		display: block;
 		position: absolute;
-		top: -850%;
+		top: -1300%;
 		left: 0;
-		padding: 66px 24px;
+		padding: 27px 24px 54px;
 		width: 100%;
 		background: $white;
 		border-radius: 16px;
 		box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
-		z-index: 2;
+		z-index: 4;
 		transition: top 1.3s ease-in-out;
 	}
 
@@ -35,13 +35,13 @@
 }
 
 .navigation {
-	margin-top: 32px;
+	margin-top: 22px;
 }
 
 .list {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 14px;
 }
 
 .listLink {
@@ -53,9 +53,10 @@
 .listItem {
 	display: flex;
 	flex-direction: row;
-	padding: 10px 4px;
+	padding: 8px 4px;
 	width: 100%;
 	gap: 10px;
+	background: $blue-light;
 	border-bottom: 0.5px solid #cbcbcb;
 	border-radius: 4px;
 }
