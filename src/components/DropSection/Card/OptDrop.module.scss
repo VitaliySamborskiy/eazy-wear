@@ -1,0 +1,48 @@
+@import "../../../scss/global/vars.scss";
+
+.dropList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    max-width: 1400px;
+    gap: 20px;
+  }
+
+  .dropTitle {
+    font-size: 24px;
+    color: $black;
+    margin-bottom: 8px;
+  }
+
+  .dropPrgf {
+    color: $grey;
+  }
+
+  .dropBtn {
+    width: 100%;
+    background-color: #F7980A;
+    color: $white;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 10px;
+  }
+
+  .dropSectionImg {
+    border-radius: 4px;
+  }
+
+  .dropText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 318px;
+  }
+
+  .dropText p {
+    line-height: 150%;
+    max-width: 272px;
+  }
+
+  .optContainer {
+    max-height: 190px;
+  }
