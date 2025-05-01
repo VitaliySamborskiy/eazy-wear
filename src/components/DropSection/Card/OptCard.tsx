@@ -6,7 +6,7 @@ const OptCard = () => {
 			<ul className={styles.dropList}>
 				<li className={styles.dropText}>
 					<div>
-						<h3 className={styles.dropTitle}>Оптові закупівлі від EazyWear</h3>
+						<h3 className={styles.dropTitle}>Оптові закупівлі <br/> від EazyWear</h3>
 						<p>Доступні ціни і стильний асортимент</p>
 					</div>
 					<button type="button" className={styles.dropBtn}>Більше</button>

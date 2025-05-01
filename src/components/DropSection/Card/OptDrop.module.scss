@@ -3,6 +3,7 @@
 .dropList {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
     max-width: 1400px;
     gap: 20px;
   }
@@ -27,8 +28,22 @@
     padding: 10px;
   }
 
+  .dropSectionImg {
+    border-radius: 4px;
+  }
+
   .dropText {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 318px;
+  }
+
+  .dropText p {
+    line-height: 150%;
+    max-width: 272px;
+  }
+
+  .optContainer {
+    max-height: 190px;
   }
